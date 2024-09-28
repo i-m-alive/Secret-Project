@@ -1,0 +1,102 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Logo Styling */
+.App-logo {
+  height: 100px; /* Increased size for better visibility */
+  width: 100px; /* Ensure width matches height for circle */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensure the image fits well */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #282c34;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+  position: relative; /* Important for dropdown positioning */
+}
+
+.nav-links a,
+.nav-links span {
+  color: white;
+  text-decoration: none;
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links span:hover {
+  color: #61dafb;
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+  color: #61dafb;
+  border-bottom: 2px solid #61dafb;
+}
+
+/* Dropdown Styling */
+.instructions-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Ensure it drops down from the menu item */
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.instructions-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .instructions-dropdown .dropdown-content {
+    position: relative; /* Make dropdown appear below each other in column view */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure full width for dropdown on mobile */
+  }
+}
